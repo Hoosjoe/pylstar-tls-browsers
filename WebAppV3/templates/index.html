@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        html, body {
+            height: 100%;
+            background: linear-gradient(135deg, #FFC2D8, #FFD8B6);
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: teal;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .checkmark {
+            color: #32CD32; /* Green color for the checkmark */
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FFC2D8;
+            color: teal;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {background-color: #FFC2D8;} /* Pink */
+        .button2 {background-color: #FFD8B6;} /* Light Orange */
+
+        /* Styling for the text box */
+        .text-box {
+            background-color: black;
+            color: #32CD32; /* Green font color */
+            padding: 10px;
+            margin-top: 20px;
+            font-family: monospace;
+            white-space: pre-wrap; /* Preserve line breaks and spaces */
+            overflow-wrap: break-word;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="checkmark">✓</div>
+        <h1>Le certificat est valide</h1>
+        <div id="messageBox" style="display: none;"></div>
+        <button class="button button1" onclick="startInference()">Commencer l'inférence</button>
+        <a href="/open_new_tab" target="_blank">
+            <button class="button button2">Lancer le script client</button>
+        </a>
+
+        <!-- New text box to display inference messages -->
+        <div class="text-box" id="inferenceMessages"></div>
+    </div>
+    <script>
+        function startInference() {
+            fetch('/start_inference', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Inference process started successfully.');
+                } else {
+                    console.error('Failed to start inference process.');
+                }
+            })
+            .catch(error => {
+                console.error('An error occurred while starting inference process.');
+                console.error(error);
+            });
+        }
+    </script>
+    
+</body>
+</html>

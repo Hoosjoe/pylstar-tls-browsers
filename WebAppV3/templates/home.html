@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inférence TLS - Page d'accueil</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            background: linear-gradient(135deg, #FFC2D8, #FFD8B6);
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: teal;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FFC2D8;
+            color: teal;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function startServer() {
+            // Redirect to the page to start the server and test the certificate (page 2)
+            window.location.href = "/test_certificate";
+        }
+    </script>
+</head>
+<body>
+    <h1>Inférence sur les protocoles TLS</h1>
+    <p>Port Number: {{ port }}</p>
+    <button class="button" onclick="startServer()">Passer à l'étape de test du certificat</button>
+</body>
+</html>
