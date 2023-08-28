@@ -1,0 +1,9 @@
+stages:
+        - test
+
+test-python3:
+        stage: test
+        image: python:3.10-buster
+        script:
+                - pip install --src /tmp/src -r requirements.txt
+                - make -C src check

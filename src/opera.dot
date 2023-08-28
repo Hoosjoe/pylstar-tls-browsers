@@ -1,0 +1,38 @@
+digraph {
+"0" [shape=doubleoctagon];
+"1" [shape=ellipse];
+"2" [shape=ellipse];
+"3" [shape=ellipse];
+"4" [shape=ellipse];
+"5" [shape=ellipse];
+"6" [shape=rectangle];
+"0" -> "1" [label="SH-SH_rand00 / -"];
+"0" -> "6" [label="* / UnexpMsg", color="grey", fontcolor="grey"];
+"1" -> "2" [label="CCS / -"];
+"1" -> "6" [label="* / CCS+UNKNOWN"];
+"2" -> "6" [label="Close / EOF", color="grey", fontcolor="grey"];
+"2" -> "3" [label="EE / -"];
+"2" -> "6" [label="* / CCS+UNKNOWN"];
+"3" -> "6" [label="CCS-SH / CCS+BadMAC"];
+"3" -> "4" [label="CR / -"];
+"3" -> "5" [label="Cert / -"];
+"3" -> "6" [label="Close / EOF", color="grey", fontcolor="grey"];
+"3" -> "6" [label="EmptyCert / CCS+CertRequires"];
+"3" -> "6" [label="NoReneg / CCS+DecodeError"];
+"3" -> "6" [label="SH_rand00 / CCS+WrongVersion"];
+"3" -> "6" [label="* / CCS+UnexpMsg"];
+"4" -> "6" [label="CCS-SH / CCS+BadMAC"];
+"4" -> "5" [label="Cert / -"];
+"4" -> "6" [label="Close / EOF", color="grey", fontcolor="grey"];
+"4" -> "6" [label="EmptyCert / CCS+CertRequires"];
+"4" -> "6" [label="NoReneg / CCS+DecodeError"];
+"4" -> "6" [label="SH_rand00 / CCS+WrongVersion"];
+"4" -> "6" [label="* / CCS+UnexpMsg"];
+"5" -> "6" [label="AppData-EmptyAppData / CCS+UnexpMsg"];
+"5" -> "6" [label="CCS-SH / CCS+BadMAC"];
+"5" -> "6" [label="Close / EOF", color="grey", fontcolor="grey"];
+"5" -> "6" [label="NoReneg / CCS+DecodeError"];
+"5" -> "6" [label="SH_rand00 / CCS+WrongVersion"];
+"5" -> "6" [label="* / CCS+CertUnknown"];
+"6" -> "6" [label="* / EOF", color="grey", fontcolor="grey"];
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client TLS</title>
+    <script>
+        // Votre code JavaScript pour effectuer les requêtes TLS
+        function makeRequest() {
+            fetch('http://127.0.0.1:4433')
+                .then(response => {
+                    console.log('Réponse du serveur :', response);
+                    // Traiter la réponse du serveur ici
+                })
+                .catch(error => {
+                    console.error('Une erreur s\'est produite :', error);
+                    // Gérer l'erreur ici
+                })
+                .finally(() => {
+                    // Planifier la prochaine requête après un délai aléatoire entre 1 et 5 secondes
+                    setTimeout(setNextConnection, getRandomDelay(10, 50));
+                });
+        }
+
+        // Fonction pour générer un délai aléatoire
+        function getRandomDelay(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Fonction pour planifier la prochaine connexion
+        function setNextConnection() {
+            const nextPort = 4433; // Port pour la prochaine séquence
+            const nextTime = new Date(Date.now() + getRandomDelay(50, 100)); // Moment de la prochaine séquence
+            console.log('Prochaine séquence programmée : Port ' + nextPort + ', Heure ' + nextTime);
+            makeRequest(); // Lancer la prochaine requête
+        }
+
+        // Lancer la première requête
+        makeRequest();
+    </script>
+</head>
+<body>
+    <!-- Le contenu de votre page HTML -->
+</body>
+</html>

@@ -1,0 +1,9 @@
+pytest
+pytest-cov
+pytest-pylint
+pytest-mypy
+cryptography <38
+-e git+https://github.com/pictyeye/scapy.git@fddebaa934a941b970f0b2a24c5cf51fc54a8742#egg=scapy
+pylstar
+jinja2
+configparser

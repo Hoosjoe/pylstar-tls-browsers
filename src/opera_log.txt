@@ -1,0 +1,52 @@
+pinata@DESKTOP-IHAIJ7H:~/PRE/pylstar-tls$ python3 src/./infer_client.py -L 127.0.0.1:4433 -C good:$PWD/certs/server.crt:$PWD/certs/server.key:DEFAULT -S tls13 -E BDist:1 -o /home/pinata/PRE/pylstar-tls/src --timeout 0.1
+input_letters ['TLS13ServerHello', 'TLS13SH_WITH_00_RandBytes', 'TLSChangeCipherSpec', 'TLS13EncryptedExtensions', 'TLS13CertificateRequest', 'TLS13Certificate_good', 'TLS13EmptyCertificate', 'TLS13CertificateVerify', 'TLS13InvalidCertificateVerify', 'TLSFinished', 'TLSApplicationData', 'TLSApplicationDataEmpty', 'TLSCloseNotify', 'NoRenegotiation']
+eqtests: BDist(1)
+timeout: 0.1
+WARNING: Unknown TLS version
+WARNING: Unknown TLS version
+WARNING: more Unknown TLS version
+WARNING: Unknown TLS version
+WARNING: Unknown TLS version
+WARNING: more Unknown TLS version
+33069: [INFO] StoreHypotheses:find_counterexample: Storing hyptohesis #0 in /home/pinata/PRE/pylstar-tls/src/0.automaton
+33069: [INFO] StoreHypotheses:write_stats:   time spent so far: 32.45454144477844
+33069: [INFO] StoreHypotheses:write_stats:   n_states: 8
+33069: [INFO] StoreHypotheses:write_stats:   n_queries=1680
+33069: [INFO] StoreHypotheses:write_stats:   n_submitted_queries=1582
+33069: [INFO] StoreHypotheses:write_stats:   n_letters=7868
+33069: [INFO] StoreHypotheses:write_stats:   n_submitted_letters=7462
+33070: [INFO] HappyPathFirst:find_counterexample: Starting the HappyPath Algorithm to search for a counter-example
+33200: [INFO] HappyPathFirst:__check_equivalence: Found a counter-example : input: '[Letter('TLS13ServerHello'), Letter('TLSChangeCipherSpec'), Letter('TLS13EncryptedExtensions'), Letter('TLS13Certificate_good'), Letter('TLS13CertificateVerify'), Letter('TLSFinished'), Letter('TLSApplicationData')]', expected: '[Letter('No RSP'), Letter('No RSP'), Letter('No RSP'), Letter('No RSP'), Letter('No RSP'), Letter('EOF'), Letter('EOF')]', observed: '[Letter('No RSP'), Letter('No RSP'), Letter('No RSP'), Letter('No RSP'), Letter('No RSP'), Letter('TLSChangeCipherSpec+TLSFinished+TLSApplicationData'), Letter('EOF')]'
+33201: [INFO] StoreHypotheses:write_stats: Found a counterexample: OutputQuery(I = [Letter('TLS13ServerHello'), Letter('TLSChangeCipherSpec'), Letter('TLS13EncryptedExtensions'), Letter('TLS13Certificate_good'), Letter('TLS13CertificateVerify'), Letter('TLSFinished'), Letter('TLSApplicationData')], O = [Letter('No RSP'), Letter('No RSP'), Letter('No RSP'), Letter('No RSP'), Letter('No RSP'), Letter('TLSChangeCipherSpec+TLSFinished+TLSApplicationData'), Letter('EOF')])
+33201: [INFO] StoreHypotheses:write_stats:   time spent so far: 32.586647510528564
+33201: [INFO] StoreHypotheses:write_stats:   n_states: 8
+33201: [INFO] StoreHypotheses:write_stats:   n_queries=1683
+33201: [INFO] StoreHypotheses:write_stats:   n_submitted_queries=1584
+33201: [INFO] StoreHypotheses:write_stats:   n_letters=7889
+33201: [INFO] StoreHypotheses:write_stats:   n_submitted_letters=7475
+WARNING: Unknown TLS version
+55215: [INFO] StoreHypotheses:find_counterexample: Storing hyptohesis #1 in /home/pinata/PRE/pylstar-tls/src/1.automaton
+55215: [INFO] StoreHypotheses:write_stats:   time spent so far: 54.600749492645264
+55215: [INFO] StoreHypotheses:write_stats:   n_states: 11
+55215: [INFO] StoreHypotheses:write_stats:   n_queries=2692
+55215: [INFO] StoreHypotheses:write_stats:   n_submitted_queries=2523
+55215: [INFO] StoreHypotheses:write_stats:   n_letters=15255
+55215: [INFO] StoreHypotheses:write_stats:   n_submitted_letters=14396
+55217: [INFO] HappyPathFirst:find_counterexample: Starting the HappyPath Algorithm to search for a counter-example
+55217: [INFO] BDistMethod:find_counterexample: Starting the BDistMethod Algorithm to search for a counter-example
+WARNING: Unknown TLS version
+WARNING: more Unknown TLS version
+105870: [INFO] StoreHypotheses:write_stats: Inference converged
+105871: [INFO] StoreHypotheses:write_stats:   time spent so far: 105.2564754486084
+105871: [INFO] StoreHypotheses:write_stats:   n_states: 11
+105871: [INFO] StoreHypotheses:write_stats:   n_queries=6880
+105871: [INFO] StoreHypotheses:write_stats:   n_submitted_queries=4483
+105871: [INFO] StoreHypotheses:write_stats:   n_letters=30948
+105871: [INFO] StoreHypotheses:write_stats:   n_submitted_letters=25575
+
+time spent in lstar.learn(): 105.26978278160095
+n_states: 11
+n_queries=6880
+n_submitted_queries=4483
+n_letters=30948
+n_submitted_letters=25575

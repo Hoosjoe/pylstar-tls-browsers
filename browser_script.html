@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client TLS</title>
+    <script>
+        // Votre code JavaScript pour effectuer les requêtes TLS
+        function makeRequest() {
+            fetch('https://127.0.0.1:4433')
+                .then(response => {
+                    console.log('Réponse du serveur :', response);
+                    // Traiter la réponse du serveur ici
+                })
+                .catch(error => {
+                    console.error('Une erreur s\'est produite :', error);
+                    // Gérer l'erreur ici
+                })
+                .finally(() => {
+                    // Planifier la prochaine requête dans 1 seconde
+                    setTimeout(makeRequest, 10);
+                });
+        }
+
+        // Lancer la première requête
+        makeRequest();
+    </script>
+</head>
+<body>
+    <!-- Le contenu de votre page HTML -->
+</body>
+</html>
